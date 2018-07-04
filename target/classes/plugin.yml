@@ -1,0 +1,7 @@
+name: mIndustry
+version: 0.1
+main: red.man10.MIPlugin
+author: Shupro
+description: Man10 Food Cusmomizing system
+commands:
+   mi:

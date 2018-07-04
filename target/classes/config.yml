@@ -1,0 +1,17 @@
+boatrace:
+  name: "ボートレース"
+  playerNumber: 1
+  item: "BOAT"
+  joinFee: 50000
+  tax: 0.1
+  prize: 0.1
+  timer1: 100
+  timer2: 100
+  timer3: 100
+
+mysql:
+  host: localhost
+  port: 3306
+  user: user
+  pass: pass
+  db: bookmaker

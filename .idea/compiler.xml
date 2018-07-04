@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Man10BookMaker" />
+        <module name="Man10BookMakerHelper" />
+        <module name="Man10Food" />
+        <module name="Man10Group" />
+        <module name="mFood" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Man10BookMaker" target="1.8" />
+      <module name="Man10BookMakerHelper" target="1.8" />
+      <module name="Man10Food" target="1.8" />
+      <module name="Man10Group" target="1.8" />
+      <module name="mFood" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
