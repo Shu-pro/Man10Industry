@@ -27,15 +27,16 @@ class MIConfig {
         loadChanceSets(cs)
         loadSkills(cs)
         loadRecipes(cs)
+        loadMachines(cs)
     }
 
     fun loadChanceSets(cs: CommandSender) {
-        val file = loadFile("chancesets", cs)
+        val file = loadFile("chance_sets", cs)
 
         pl!!.chanceSets.clear()
         val ymlFile = YamlConfiguration.loadConfiguration(file)
         val chanceSetKeys = ymlFile.getKeys(false)
-        cs.sendMessage(pl!!.prefix + "§eChanceSets:")
+        cs.sendMessage(pl!!.prefix + "§eChance Sets:")
         for (chanceSetKey in chanceSetKeys) {
             val isCorrect = (
                     ymlFile.getKeys(true).contains(chanceSetKey + ".req") &&
@@ -104,8 +105,8 @@ class MIConfig {
             print(ymlFile.getKeys(true))
             val isCorrect: Boolean = (
                     ymlFile.getKeys(true).contains(recipeKey + ".inputs") &&
-                            ymlFile.getKeys(true).contains(recipeKey + ".outputs") &&
-                            ymlFile.getKeys(true).contains(recipeKey + ".chancesets")
+                    ymlFile.getKeys(true).contains(recipeKey + ".outputs") &&
+                    ymlFile.getKeys(true).contains(recipeKey + ".chance_sets")
                     )
             if (isCorrect) {
                 var newInputs = mutableListOf<ItemStack>()
@@ -117,9 +118,10 @@ class MIConfig {
                     newOutputs = util!!.itemStackArrayFromBase64(ymlFile.getString(recipeKey + ".outputs"))
                 }
                 var newChanceSets = mutableMapOf<Skill, ChanceSet>()
-                val stringChanceSets = getItemsUnderPath(ymlFile, ".chancesets.")//ymlFile.getKeys(true).filter { it.startsWith(recipeKey + ".chancesets.") }
+                val stringChanceSets = getItemsUnderPath(ymlFile, recipeKey + ".chance_sets.")//ymlFile.getKeys(true).filter { it.startsWith(recipeKey + ".chancesets.") }
+                print(stringChanceSets)
                 for (stringChanceSet in stringChanceSets) {
-                    newChanceSets.put(pl!!.skills[stringChanceSet.key.toInt()], pl!!.chanceSets[stringChanceSet.value]!!)
+                    newChanceSets.put( pl!!.skills[stringChanceSet.key.toInt()], pl!!.chanceSets[stringChanceSet.value]!! )
                 }
                 val newRecipe = Recipe(
                         newInputs,
@@ -133,12 +135,46 @@ class MIConfig {
             }
         }
         print(pl!!.chanceSets)
-
-
     }
 
     fun loadMachines(cs: CommandSender) {
+        pl!!.machines.clear()
 
+        val file = loadFile("machines", cs)
+        val ymlFile = YamlConfiguration.loadConfiguration(file)
+
+        val machineKeys = ymlFile.getKeys(false)
+
+        cs.sendMessage(pl!!.prefix + "§eMachines:")
+
+        for (machineKey in machineKeys) {
+            val isCorrect: Boolean = (
+                    ymlFile.getKeys(true).contains(machineKey + ".name") &&
+                    ymlFile.getKeys(true).contains(machineKey + ".image_name") &&
+                    ymlFile.getKeys(true).contains(machineKey + ".recipes")
+                    )
+            if (isCorrect) {
+                val recipeKeys = ymlFile.getList(machineKey  + ".recipes")
+                print(recipeKeys)
+                val newRecipes = mutableListOf<Recipe>()
+                for (recipeKey in recipeKeys) {
+                    (pl!!.recipies[recipeKey.toString()])?.let {
+                        print(it)
+                        newRecipes.add(it)
+                    }
+                }
+
+                val newMachine = Machine(
+                        ymlFile.getString(machineKey + ".name"),
+                        ymlFile.getString(machineKey + ".image_name"),
+                        newRecipes
+                )
+                pl!!.machines.put(machineKey, newMachine)
+                cs.sendMessage(pl!!.prefix + "§a" + machineKey + " ○")
+            } else {
+                cs.sendMessage(pl!!.prefix + "§c" + machineKey + " ×")
+            }
+        }
     }
 
     fun loadFile(name: String, cs: CommandSender): File {

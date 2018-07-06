@@ -22,6 +22,7 @@ class MIPlugin: JavaPlugin() {
     var chanceSets = mutableMapOf<String, ChanceSet>()
     var recipies = mutableMapOf<String, Recipe>()
     var skills = mutableListOf<Skill>()
+    var machines = mutableMapOf<String, Machine>()
 
     override fun onEnable() {
         server.pluginManager.registerEvents(listener, this)
@@ -53,14 +54,17 @@ class MIPlugin: JavaPlugin() {
                             "list" -> {
                                 sender.sendMessage(prefix + "§bChanceSets: ")
                                 sender.sendMessage(prefix + "§7" + chanceSets.keys)
-                                sender.sendMessage(prefix + "§bSkills: ")
 
+                                sender.sendMessage(prefix + "§bSkills: ")
                                 val skillStringList = mutableListOf<String>()
                                 skills.onEach { skillStringList.add(it.name) }
                                 sender.sendMessage(prefix + "§7" + skillStringList)
 
                                 sender.sendMessage(prefix + "§bRecipes: ")
                                 sender.sendMessage(prefix + "§7" + recipies.keys)
+
+                                sender.sendMessage(prefix + "§bMachines: ")
+                                sender.sendMessage(prefix + "§7" + machines.keys)
                                 return true
                             }
                             "0711" -> {
@@ -99,6 +103,24 @@ class MIPlugin: JavaPlugin() {
                                         }
                                         return true
                                     }
+                                    "m" -> {
+                                        if (machines[args[2]] != null) {
+                                            sender.sendMessage(prefix + "§bData of Machine: " + args[2])
+                                            sender.sendMessage(prefix + "§7" + machines[args[2]])
+                                        } else {
+                                            sender.sendMessage(prefix + "§bMachine: " + args[2] + " doesn't exist")
+                                        }
+                                        return true
+                                    }
+                                    "r" -> {
+                                        if (recipies[args[2]] != null) {
+                                            sender.sendMessage(prefix + "§bData of Recipe: " + args[2])
+                                            sender.sendMessage(prefix + "§7" + recipies[args[2]])
+                                        } else {
+                                            sender.sendMessage(prefix + "§bRecipe: " + args[2] + " doesn't exist")
+                                        }
+                                        return true
+                                    }
                                     else -> {
                                         warnWrongCommand(sender)
                                         return true
@@ -132,8 +154,8 @@ class MIPlugin: JavaPlugin() {
         sender.sendMessage("§a******** §b§lm§3§lIndustry §a********")
         sender.sendMessage("§bData Managements")
         sender.sendMessage("§3/mi reload §7Load all data")
-        sender.sendMessage("§3/mi list §7View all machines/recipes/skills")
-        sender.sendMessage("§3/mi info [c/m/r/s] [id] §7View specific data")
+        sender.sendMessage("§3/mi list §7View all CS, Machines, Recipes, Skills")
+        sender.sendMessage("§3/mi info [c/m/r] [id] §7View specific data of CS/ Machine/ Recipe")
         sender.sendMessage("§3/mi setinput [recipeId] §7Set an input for recipe")
         sender.sendMessage("§3/mi setoutput [recipeId] §7Set an output for recipe")
         sender.sendMessage("§bVer 1.0 : by Shupro")
