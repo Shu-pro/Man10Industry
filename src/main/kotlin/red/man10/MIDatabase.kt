@@ -8,7 +8,7 @@ class MIDatabase {
 
     fun initialize(plugin: MIPlugin): MIDatabase {
         pl = plugin
-        return MIDatabase()
+        return this
     }
 
 }

@@ -20,7 +20,7 @@ class MIUtility {
 
     fun initialize(plugin: MIPlugin): MIUtility {
         pl = plugin
-        return MIUtility()
+        return this
     }
 
     // Below made by @takatronix

@@ -1,5 +1,6 @@
 package red.man10
 
+import org.bukkit.Bukkit
 import org.bukkit.command.CommandSender
 import org.bukkit.configuration.file.YamlConfiguration
 import org.bukkit.entity.Player
@@ -19,18 +20,20 @@ class MIConfig {
 
         util = pl!!.util
 
-        return MIConfig()
+        return this
     }
 
     fun loadAll(cs: CommandSender) {
-        cs.sendMessage(pl!!.prefix + "§bLoading all configurations...")
-        loadChanceSets(cs)
-        loadSkills(cs)
-        loadRecipes(cs)
-        loadMachines(cs)
+        Bukkit.getScheduler().runTaskAsynchronously(pl!!, {
+            cs.sendMessage(pl!!.prefix + "§bLoading all configurations...")
+            loadChanceSets(cs)
+            loadSkills(cs)
+            loadRecipes(cs)
+            loadMachines(cs)
+        })
     }
 
-    fun loadChanceSets(cs: CommandSender) {
+    private fun loadChanceSets(cs: CommandSender) {
         val file = loadFile("chance_sets", cs)
 
         pl!!.chanceSets.clear()
@@ -43,14 +46,6 @@ class MIConfig {
                     ymlFile.getKeys(true).contains(chanceSetKey + ".map")
                     )
             if (isCorrect) {
-//                val chanceSetMapKeys = ymlFile.getKeys(true).filter { it.startsWith(chanceSetKey + ".map.") }
-//                val chanceSetMap = mutableMapOf<Int, Double>()
-//                for (chanceSetMapKey in chanceSetMapKeys) {
-//                    chanceSetMap.put(
-//                            chanceSetMapKey.replace(chanceSetKey + ".map.", "").toInt(), //レベル
-//                            ymlFile.getDouble(chanceSetMapKey) //確率
-//                    )
-//                }
                 val map = getItemsUnderPath(ymlFile, chanceSetKey + ".map.") as MutableMap<Int, Double>
 
                 val newChanceSet = ChanceSet(
@@ -66,7 +61,11 @@ class MIConfig {
         print(pl!!.chanceSets)
     }
 
-    fun loadSkills(cs: CommandSender) {
+    private fun loadSkills(cs: CommandSender) {
+        for (player in Bukkit.getOnlinePlayers()) {
+            pl!!.skill.savePlayerDataToDB(player.uniqueId)
+        }
+
         val file = loadFile("skills", cs)
         val ymlFile = YamlConfiguration.loadConfiguration(file)
 
@@ -75,7 +74,8 @@ class MIConfig {
         cs.sendMessage(pl!!.prefix + "§eSkills:")
         var newSkills = mutableListOf<Skill>()
         var skillGenre = SkillGenre.Craft
-        for (i in 1..12) {
+        val skillAmount = ymlFile.getKeys(false).count()
+        for (i in 1..skillAmount) {
             val skillName = ymlFile.getString(i.toString())
             if (skillName != null) {
                 val newSkill = Skill(skillName, skillGenre)
@@ -85,15 +85,20 @@ class MIConfig {
                 cs.sendMessage(pl!!.prefix + "§a" + i + " ×")
             }
             when {
-                i <= 0 -> skillGenre = SkillGenre.Craft
-                i <= 4 -> skillGenre = SkillGenre.Magic
-                i <= 8 -> skillGenre = SkillGenre.Study
+                i <= 4 -> skillGenre = SkillGenre.Craft
+                i <= 8 -> skillGenre = SkillGenre.Magic
+                i <= 12 -> skillGenre = SkillGenre.Study
+                else -> skillGenre = SkillGenre.Special
             }
         }
         pl!!.skills = newSkills
+
+        for (player in Bukkit.getOnlinePlayers()) {
+            pl!!.skill.loadPlayerDataFromDB(player.uniqueId)
+        }
     }
 
-    fun loadRecipes(cs: CommandSender) {
+    private fun loadRecipes(cs: CommandSender) {
         val file = loadFile("recipes", cs)
 
         pl!!.recipies.clear()
@@ -137,7 +142,7 @@ class MIConfig {
         print(pl!!.chanceSets)
     }
 
-    fun loadMachines(cs: CommandSender) {
+    private fun loadMachines(cs: CommandSender) {
         pl!!.machines.clear()
 
         val file = loadFile("machines", cs)
