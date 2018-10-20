@@ -11,6 +11,7 @@
         <module name="Man10Food" />
         <module name="Man10Group" />
         <module name="mFood" />
+        <module name="mIndustry" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,6 +20,7 @@
       <module name="Man10Food" target="1.8" />
       <module name="Man10Group" target="1.8" />
       <module name="mFood" target="1.8" />
+      <module name="mIndustry" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -3,13 +3,16 @@ package red.man10
 import org.bukkit.Bukkit
 import org.bukkit.command.CommandSender
 import org.bukkit.configuration.file.YamlConfiguration
-import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
+import org.yaml.snakeyaml.Yaml
+import red.man10.models.ChanceSet
+import red.man10.models.Machine
+import red.man10.models.SkillGenre
+import red.man10.models.Skill
+import red.man10.models.Recipe
 import java.io.File
 
 class MIConfig {
-
-    var util: MIUtility? = null
 
     companion object {
         var pl: MIPlugin? = null
@@ -18,19 +21,36 @@ class MIConfig {
     fun initialize(plugin: MIPlugin): MIConfig {
         pl = plugin
 
-        util = pl!!.util
-
         return this
     }
 
-    fun loadAll(cs: CommandSender) {
-        Bukkit.getScheduler().runTaskAsynchronously(pl!!, {
+    fun loadAll(cs: CommandSender) { //Load Config & Player Data
+        Bukkit.getScheduler().runTaskAsynchronously(pl!!) {
+            val mysql = MySQLManager(pl!!, "MI_LoadAll")
+
             cs.sendMessage(pl!!.prefix + "§bLoading all configurations...")
             loadChanceSets(cs)
             loadSkills(cs)
             loadRecipes(cs)
             loadMachines(cs)
-        })
+            cs.sendMessage(pl!!.prefix + "§bConfigurations Loaded!")
+        }
+    }
+
+    fun setInput(encodedItems: String, recipeKey: String) {
+        val file = loadFile("recipes", Bukkit.getConsoleSender())
+        val ymlFile = YamlConfiguration.loadConfiguration(file)
+        ymlFile.set(recipeKey + ".inputs", encodedItems)
+
+        ymlFile.save(file)
+    }
+
+    fun setOutput(encodedItems: String, recipeKey: String) {
+        val file = loadFile("recipes", Bukkit.getConsoleSender())
+        val ymlFile = YamlConfiguration.loadConfiguration(file)
+        ymlFile.set(recipeKey + ".outputs", encodedItems)
+
+        ymlFile.save(file)
     }
 
     private fun loadChanceSets(cs: CommandSender) {
@@ -62,9 +82,9 @@ class MIConfig {
     }
 
     private fun loadSkills(cs: CommandSender) {
-        for (player in Bukkit.getOnlinePlayers()) {
-            pl!!.skill.savePlayerDataToDB(player.uniqueId)
-        }
+//        for (uuid in pl!!.currentPlayerData.keys) {
+//            pl!!.skill.saveAllDataFromPlayer(uuid, mysql)
+//        }
 
         val file = loadFile("skills", cs)
         val ymlFile = YamlConfiguration.loadConfiguration(file)
@@ -93,9 +113,9 @@ class MIConfig {
         }
         pl!!.skills = newSkills
 
-        for (player in Bukkit.getOnlinePlayers()) {
-            pl!!.skill.loadPlayerDataFromDB(player.uniqueId)
-        }
+//        for (player in Bukkit.getOnlinePlayers()) {
+//            pl!!.skill.loadAllDataFromPlayer(player.uniqueId, mysql)
+//        }
     }
 
     private fun loadRecipes(cs: CommandSender) {
@@ -116,11 +136,11 @@ class MIConfig {
             if (isCorrect) {
                 var newInputs = mutableListOf<ItemStack>()
                 if (ymlFile.getString(recipeKey + ".inputs") != "") {
-                    newInputs = util!!.itemStackArrayFromBase64(ymlFile.getString(recipeKey + ".inputs"))
+                    newInputs = pl!!.util.itemStackArrayFromBase64(ymlFile.getString(recipeKey + ".inputs"))
                 }
                 var newOutputs = mutableListOf<ItemStack>()
                 if (ymlFile.getString(recipeKey + ".outputs") != "") {
-                    newOutputs = util!!.itemStackArrayFromBase64(ymlFile.getString(recipeKey + ".outputs"))
+                    newOutputs = pl!!.util.itemStackArrayFromBase64(ymlFile.getString(recipeKey + ".outputs"))
                 }
                 var newChanceSets = mutableMapOf<Skill, ChanceSet>()
                 val stringChanceSets = getItemsUnderPath(ymlFile, recipeKey + ".chance_sets.")//ymlFile.getKeys(true).filter { it.startsWith(recipeKey + ".chancesets.") }
@@ -182,7 +202,7 @@ class MIConfig {
         }
     }
 
-    fun loadFile(name: String, cs: CommandSender): File {
+    private fun loadFile(name: String, cs: CommandSender): File {
         val file = File(pl!!.dataFolder.path + "/" + name + ".yml")
         if (!file.exists()) {
             file.createNewFile()
@@ -191,7 +211,7 @@ class MIConfig {
         return file
     }
 
-    fun getItemsUnderPath(yaml: YamlConfiguration, path: String): MutableMap<String, Any> {
+    private fun getItemsUnderPath(yaml: YamlConfiguration, path: String): MutableMap<String, Any> {
         val allKeys = yaml.getKeys(true)
         val keysUnderPath = allKeys.filter { it.startsWith(path) } as MutableList
         val items = mutableMapOf<String, Any>()

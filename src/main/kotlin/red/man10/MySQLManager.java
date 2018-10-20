@@ -23,7 +23,7 @@ public class MySQLManager {
     private String USER = null;
     private String PASS = null;
     private String PORT = null;
-    private boolean connected = false;
+    boolean connected = false;
     private Statement st = null;
     private Connection con = null;
     private String conName;

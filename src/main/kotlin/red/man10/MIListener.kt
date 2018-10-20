@@ -27,15 +27,11 @@ class MIListener: Listener {
 
     @EventHandler
     fun onPlayerJoin(e: PlayerJoinEvent) {
-        Bukkit.getScheduler().runTaskAsynchronously(MIConfig.pl!!, {
-            pl!!.skill.loadPlayerDataFromDB(e.player.uniqueId)
-        })
+        pl!!.skill.currentPlayerData.put(e.player.uniqueId, mutableMapOf())
     }
 
     @EventHandler
     fun onPlayerQuit(e: PlayerQuitEvent) {
-        Bukkit.getScheduler().runTaskAsynchronously(MIConfig.pl!!, {
-            pl!!.skill.savePlayerDataToDB(e.player.uniqueId)
-        })
+        pl!!.skill.currentPlayerData.remove(e.player.uniqueId)
     }
 }

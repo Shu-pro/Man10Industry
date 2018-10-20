@@ -1,14 +1,22 @@
 package red.man10
 
 import org.bukkit.Bukkit
+import org.bukkit.Bukkit.broadcastMessage
 import org.bukkit.Material
 import org.bukkit.command.Command
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
+import org.bukkit.inventory.ItemStack
 import org.bukkit.plugin.java.JavaPlugin
-import red.man10.MIGUI
-import sun.misc.resources.Messages
+import red.man10.models.ChanceSet
+import red.man10.models.Machine
+import red.man10.models.Recipe
+import red.man10.models.Skill
 import java.util.*
+
+typealias SkillId = Int
+typealias SkillLevel = Int
+typealias PlayerSkillData = MutableMap<SkillId, SkillLevel>
 
 class MIPlugin: JavaPlugin() {
 
@@ -21,33 +29,59 @@ class MIPlugin: JavaPlugin() {
     val gui = MIGUI().initialize(this)
     val skill = MISkillData().initialize(this)
     val chat = MIChat().initialize(this)
+    val machine = MIMachine().initialize(this)
 
     var chanceSets = mutableMapOf<String, ChanceSet>()
     var recipies = mutableMapOf<String, Recipe>()
     var skills = mutableListOf<Skill>()
     var machines = mutableMapOf<String, Machine>()
 
-    var currentPlayerData: MutableMap<UUID, MutableMap<Int, Int>> = mutableMapOf()//スキルid, スキルレベル
+    //var mysql: MySQLManager? = null
+
+    var isLocked = false
 
     override fun onEnable() {
+        //val mysql = MySQLManager(this, "MI_ConnectionTest")
+
+//        if (!(mysql.connected)) {
+//            isLocked = true
+//            broadcastMessage(prefix + "§aDatabase Error - §fLocking mIndustry")
+//            //return
+//        }
+
         server.pluginManager.registerEvents(listener, this)
         server.pluginManager.registerEvents(gui, this)
 
-        for (player in Bukkit.getOnlinePlayers()) {
-            skill.loadPlayerDataFromDB(player.uniqueId)
-        }
+        saveDefaultConfig()
 
         config.loadAll(Bukkit.getConsoleSender())
+
+        for (player in Bukkit.getOnlinePlayers()) {
+            skill.currentPlayerData.put(player.uniqueId, mutableMapOf())
+        }
     }
 
     override fun onDisable() {
-        for (player in Bukkit.getOnlinePlayers()) {
-            skill.savePlayerDataToDB(player.uniqueId)
-        }
+//        print("hello1")
+//        print("hello2")
+//        for (player in Bukkit.getOnlinePlayers()) {
+//            val mysql = MySQLManager(this, "MI_OnDisable")
+//            skill.saveAllDataFromPlayer(player.uniqueId, mysql)
+//            print("hello3")
+//        }
+//        print("hello4")
     }
 
     override fun onCommand(sender: CommandSender, cmd: Command, label: String, args: Array<String>): Boolean {
         if (sender is Player) {
+            if (isLocked) {
+                sender.sendMessage(prefix + "§aPlugin Locked")
+                if (sender.hasPermission("mi.op")){
+                    sender.sendMessage(prefix + "(Bypassing)")
+                } else {
+                    return true
+                }
+            }
             if (sender.hasPermission("mi.use")){
                 when (args.size) {
                     0 -> {
@@ -74,12 +108,12 @@ class MIPlugin: JavaPlugin() {
                                         }
                                     }
                                     val skillArrow = "§8 " + "〉".repeat(7 - skill.name.length)
-                                    val level = currentPlayerData[sender.uniqueId]!![skillId]!!
+                                    val level = this.skill.getPlayerData(sender.uniqueId, skillId)//currentPlayerData[sender.uniqueId]!![skillId]!!
                                     sender.sendMessage(prefix +
-                                            " §b" + skill.name +
+                                            "§b " + skill.name +
                                             skillArrow +
-                                            " §a" + String.format("%3s", level.toString() + "Lv " +
-                                            chat.returnProgressBar((level.toDouble()/100))))
+                                            "§a " + String.format("%3s", level.toString()) + "Lv " +
+                                            chat.returnProgressBar((level.toDouble()/100)))
                                     //sender.sendMessage(prefix + "§b" + skill.name + " §a" + currentPlayerData[sender.uniqueId]!![skillId] + "Lv - " + chat.returnProgressBar(0.3))
                                     //sender.sendMessage(prefix + "§b" + chat.returnProgressBar(0.3) + " §b" + skill.name + " §a" + currentPlayerData[sender.uniqueId]!![skillId] + "Lv ")
 
@@ -99,7 +133,6 @@ class MIPlugin: JavaPlugin() {
                         when (args[0]) {
                             "help" -> {
                                 showHelp(sender)
-                                skill.loadPlayerDataFromDB(sender.uniqueId)
                                 return true
                             }
                             "reload" -> {
@@ -110,12 +143,6 @@ class MIPlugin: JavaPlugin() {
                                 showList(sender)
                                 return true
                             }
-                            "0711" -> {
-                                for (i in 1..100) {
-                                    sender.sendMessage(prefix + ":;(∩´﹏`∩);:")
-                                }
-                                return true
-                            }
                         }
                     }
                     2 -> {
@@ -123,6 +150,25 @@ class MIPlugin: JavaPlugin() {
                             "usemachine" -> {
                                 gui.openProcessingView(sender, args[1])
                                 return true
+                            }
+                            "setinput" -> {
+                                if (recipies[args[1]] != null) {
+                                    gui.openInputSetView(sender, args[1])
+                                } else {
+                                    sender.sendMessage(prefix + "Recipe doesn't exist.")
+                                }
+                                return true
+                            }
+                            "setoutput" -> {
+                                if (recipies[args[1]] != null) {
+                                    gui.openOutputSetView(sender, args[1])
+                                } else {
+                                    sender.sendMessage(prefix + "Recipe doesn't exist.")
+                                }
+                                return true
+                            }
+                            "update" -> {
+                                skill.currentPlayerData[Bukkit.getPlayer(args[1]).uniqueId]!!.clear()
                             }
                         }
                     }
@@ -170,8 +216,8 @@ class MIPlugin: JavaPlugin() {
                                     sender.sendMessage(prefix + "§bPlayer doesn't exist")
                                     return true
                                 }
-                                val targetSkill = skills[args[2].toInt() + 1]
-                                if (targetSkill == null) {
+                                //val targetSkill = skills[args[2].toInt() + 1]
+                                if (skills.size < args[2].toInt()) {
                                     sender.sendMessage(prefix + "§bSkill doesn't exist")
                                     return true
                                 }
@@ -180,7 +226,10 @@ class MIPlugin: JavaPlugin() {
                                     sender.sendMessage(prefix + "§bLevel value is invalid")
                                     return true
                                 }
-                                skill.setPlayerData(targetPlayer.uniqueId, args[2].toInt(), level)
+                                Bukkit.getScheduler().runTaskAsynchronously(this) {
+                                    val mysql = MySQLManager(this, "MI_SkillSet")
+                                    skill.setPlayerData(targetPlayer.uniqueId, level, args[2].toInt())
+                                }
                                 sender.sendMessage(prefix + "§bLevel set")
                                 return true
                             }
@@ -190,7 +239,7 @@ class MIPlugin: JavaPlugin() {
             }
             warnWrongCommand(sender)
         } else {
-            sender.sendMessage(prefix + "コンソールからは実行できません。")
+            sender.sendMessage(prefix + "Can't run from console.")
             return true
         }
         return false
@@ -206,7 +255,8 @@ class MIPlugin: JavaPlugin() {
         sender.sendMessage("§3/mi setoutput [recipeKey] §7Set an output for recipe")
         sender.sendMessage("§3/mi usemachine [machineKey] §7Use a machine")
         sender.sendMessage("§3/mi setlevel [playerId] [skillId] [level] §7Set a level of player")
-        sender.sendMessage("§bVer 1.0 : by Shupro")
+        sender.sendMessage("§3/mi update [playerId] §7Update player's skill cache by DB.")
+        sender.sendMessage("§bVer 0.2 : by Shupro")
         sender.sendMessage("§a***************************")
     }
 
