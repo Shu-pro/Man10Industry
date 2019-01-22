@@ -1,6 +1,8 @@
 package red.man10
 
+import org.apache.commons.lang.mutable.Mutable
 import org.bukkit.configuration.file.YamlConfiguration
+import org.bukkit.entity.Item
 import java.io.File
 import org.yaml.snakeyaml.external.biz.base64Coder.Base64Coder
 import sun.plugin2.liveconnect.ArgumentHelper.writeObject
@@ -79,5 +81,13 @@ class MIUtility {
             }
         }
         return unwrappedList
+    }
+
+    fun cloneMutableItemStackList(list: MutableList<ItemStack>): MutableList<ItemStack> {
+        var newList = mutableListOf<ItemStack>()
+        for (item in list) {
+            newList.add(item.clone())
+        }
+        return newList
     }
 }

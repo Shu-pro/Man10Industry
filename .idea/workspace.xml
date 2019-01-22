@@ -7,53 +7,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfac04dc-d64c-442f-9b4e-2fed02d2e82e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/red/man10/MIMachine.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/mIndustry_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/mIndustry_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_md_5_bungeecord_chat_1_12_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_md_5_bungeecord_chat_1_12_SNAPSHOT.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/red/man10/BoundingBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/red/man10/MappRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/red/man10/RayTrace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/red/man10/VaultManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mIndustry.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mIndustry.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Man10BookMaker_jar/Man10BookMaker.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Man10BookMaker_jar/config.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/mFood_jar/mFood.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/mIndustry_jar/DragTestJava.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/mIndustry_jar/mIndustry.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/red/man10/ChanceSet.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/red/man10/MIConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/red/man10/MIConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/red/man10/MIDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/red/man10/MIDatabase.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/red/man10/MIGUI.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/red/man10/MIGUI.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/red/man10/MIListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/red/man10/MIListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/red/man10/MIMachine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/red/man10/MIMachine.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/red/man10/MIPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/red/man10/MIPlugin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/red/man10/MISkillData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/red/man10/MISkillData.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/red/man10/MIUtility.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/red/man10/MIUtility.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/red/man10/Machine.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/red/man10/MySQLManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/red/man10/MySQLManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/red/man10/Recipe.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/red/man10/Skill.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/ChanceSet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIChat$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/red/man10/MIChat$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIChat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/red/man10/MIChat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIConfig$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/red/man10/MIConfig$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/red/man10/models/Machine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/red/man10/models/Machine.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/red/man10/models/Recipe.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/red/man10/models/Recipe.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIConfig$loadAll$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/red/man10/MIConfig$loadAll$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/red/man10/MIConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIDatabase$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/red/man10/MIDatabase$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/red/man10/MIDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIGUI$Companion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIListener$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/red/man10/MIListener$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIListener$onPlayerJoin$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIListener$onPlayerQuit$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/red/man10/MIListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIPlugin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MISkillData$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/red/man10/MISkillData$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MISkillData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/red/man10/MISkillData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/red/man10/MIGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIMachine$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/red/man10/MIMachine$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIMachine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/red/man10/MIMachine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIPlugin$onCommand$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/red/man10/MIPlugin$onCommand$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIPlugin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/red/man10/MIPlugin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIUtility$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/red/man10/MIUtility$Companion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MIUtility.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/red/man10/MIUtility.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/Machine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/MySQLManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/red/man10/MySQLManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/Recipe.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/Skill.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/SkillGenre.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/red/man10/models/Machine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/red/man10/models/Machine.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,35 +42,39 @@
     <session id="-1392369272">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="12" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.24" value="1" />
-          <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.27" value="2" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="7" />
-          <entry key="kt" value="8438" />
+          <entry key="java" value="61" />
+          <entry key="kt" value="12619" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="7" />
-          <entry key="Kotlin" value="8438" />
+          <entry key="JAVA" value="61" />
+          <entry key="Kotlin" value="12619" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="2" />
-          <entry key="java" value="2" />
-          <entry key="kt" value="22" />
+          <entry key="class" value="4" />
+          <entry key="java" value="6" />
+          <entry key="kt" value="27" />
           <entry key="yml" value="1" />
         </counts>
       </usages-collector>
@@ -102,9 +82,9 @@
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="2" />
-          <entry key="Kotlin" value="22" />
+          <entry key="CLASS" value="4" />
+          <entry key="JAVA" value="6" />
+          <entry key="Kotlin" value="27" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
@@ -120,8 +100,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MIPlugin.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="259" column="59" selection-start-line="259" selection-start-column="59" selection-end-line="259" selection-end-column="59" />
+            <state relative-caret-position="2430">
+              <caret line="174" column="73" selection-start-line="174" selection-start-column="73" selection-end-line="174" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -130,7 +110,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/models/ChanceSet.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-end-line="5" selection-end-column="1" />
+              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -138,17 +118,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MIConfig.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/models/Recipe.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+            <state relative-caret-position="2175">
+              <caret line="155" column="17" selection-start-line="155" selection-start-column="17" selection-end-line="155" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -156,20 +127,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/models/Machine.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+            <state>
+              <caret column="24" selection-start-column="24" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MIGUI.kt">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/models/Recipe.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
-              <folding>
-                <element signature="e#19#640#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="105">
+              <caret line="7" column="70" selection-start-line="7" selection-start-column="70" selection-end-line="7" selection-end-column="70" />
             </state>
           </provider>
         </entry>
@@ -177,29 +145,74 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MIMachine.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+            <state relative-caret-position="534">
+              <caret line="38" column="37" lean-forward="true" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="38" />
               <folding>
-                <element signature="e#19#223#0" expanded="true" />
+                <element signature="e#19#464#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MIUtility.kt">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/VaultManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-278">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="120">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MIListener.kt">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MappRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="3720">
+              <caret line="287" selection-start-line="287" selection-end-line="287" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1845#1846#0" expanded="true" />
+                <element signature="e#1910#1911#0" expanded="true" />
+                <element signature="e#1957#1958#0" expanded="true" />
+                <element signature="e#1994#1995#0" expanded="true" />
+                <element signature="e#7387#7388#0" expanded="true" />
+                <element signature="e#7430#7431#0" expanded="true" />
+                <element signature="e#8088#8089#0" expanded="true" />
+                <element signature="e#8133#8134#0" expanded="true" />
+                <element signature="e#8306#8307#0" expanded="true" />
+                <element signature="e#8350#8351#0" expanded="true" />
+                <element signature="e#8454#8455#0" expanded="true" />
+                <element signature="e#8498#8499#0" expanded="true" />
+                <element signature="e#8682#8683#0" expanded="true" />
+                <element signature="e#8725#8726#0" expanded="true" />
+                <element signature="e#8913#8914#0" expanded="true" />
+                <element signature="e#8957#8958#0" expanded="true" />
+                <element signature="e#9143#9144#0" expanded="true" />
+                <element signature="e#9187#9188#0" expanded="true" />
+                <element signature="e#9339#9340#0" expanded="true" />
+                <element signature="e#9381#9382#0" expanded="true" />
+                <element signature="e#9559#9560#0" expanded="true" />
+                <element signature="e#9602#9603#0" expanded="true" />
+                <element signature="e#32273#32274#0" expanded="true" />
+                <element signature="e#32313#32314#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/RayTrace.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/BoundingBox.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -209,27 +222,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Kotlin Class" />
         <option value="Kotlin File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.toInt</find>
-      <find>&lt;&lt;</find>
-      <find>for</find>
-      <find>format</find>
-      <find>roundto</find>
-      <find>round</find>
-      <find>bet(</find>
-      <find>bookmaker</find>
-      <find>Man10Group</find>
-      <find>id</find>
-      <find>getItemsUnderPath(yml</find>
-      <find>name</find>
-      <find>async</find>
       <find>Int</find>
       <find>saveAll</find>
       <find>savealldaa</find>
@@ -247,6 +247,19 @@
       <find>AIR</find>
       <find>exist.</find>
       <find>apple</find>
+      <find>１</find>
+      <find>map</find>
+      <find>drawFunction</find>
+      <find>drawFunctions.</find>
+      <find>image</find>
+      <find>loadimages</find>
+      <find>loadim</find>
+      <find>Image</find>
+      <find>Image.</find>
+      <find>ImageIO</find>
+      <find>draw</find>
+      <find>draw(</find>
+      <find>loadall</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -255,10 +268,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/BookMakerGameManager.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/BookMakerSidebar.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/BookMakerListener.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/BookMakerPlugin.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/GroupListener.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/GroupChat.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/GroupData.kt" />
@@ -293,19 +302,23 @@
         <option value="$PROJECT_DIR$/src/main/resources/config.yml" />
         <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/MIChat.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/Models/Machine.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/models/Recipe.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/models/Machine.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/models/Skill.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/MIDatabase.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/MySQLManager.java" />
         <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/MIListener.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/MISkillData.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/MIUtility.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/MIConfig.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/models/ChanceSet.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/MIPlugin.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/MIMachine.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/MIUtility.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/MIGUI.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/MappRenderer.java" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/BoundingBox.java" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/RayTrace.java" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/VaultManager.java" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/models/Machine.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/MIPlugin.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/models/Recipe.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/MIConfig.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/red/man10/MIMachine.kt" />
       </list>
     </option>
   </component>
@@ -332,9 +345,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -388,14 +400,15 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540016010565" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542030798634" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -486,12 +499,17 @@
       <workItem from="1538138889908" duration="12277000" />
       <workItem from="1538887277697" duration="13882000" />
       <workItem from="1538971398749" duration="71000" />
-      <workItem from="1539851492467" duration="20539000" />
+      <workItem from="1539851492467" duration="21565000" />
+      <workItem from="1540099430279" duration="2550000" />
+      <workItem from="1540617485244" duration="3303000" />
+      <workItem from="1541478702692" duration="37391000" />
+      <workItem from="1542607555810" duration="225000" />
+      <workItem from="1543374404720" duration="3000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70726000" />
+    <option name="totallyTimeSpent" value="115224000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -504,17 +522,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Capture Tool" order="0" />
       <window_info id="Designer" order="1" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" sideWeight="0.5089757" side_tool="true" weight="0.1256656" />
-      <window_info active="true" content_ui="combo" id="Project" order="4" sideWeight="0.4910243" visible="true" weight="0.28612304" />
+      <window_info active="true" content_ui="combo" id="Project" order="4" sideWeight="0.4910243" visible="true" weight="0.30615166" />
       <window_info id="Structure" order="5" weight="0.24964234" />
       <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5114449" side_tool="true" weight="0.32950193" />
-      <window_info anchor="bottom" id="Messages" order="1" sideWeight="0.48855507" weight="0.15783133" />
+      <window_info anchor="bottom" id="Messages" order="1" sideWeight="0.48855507" visible="true" weight="0.19156626" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.11749681" />
       <window_info anchor="bottom" id="Message" order="4" />
@@ -557,7 +574,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/GroupListener.kt" />
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/GroupData.kt" />
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/GroupChat.kt" />
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/GroupPlugin.kt" />
@@ -640,23 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/models/Skill.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MISkillData.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
-          <folding>
-            <element signature="e#19#62#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MIDatabase.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -674,13 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MIListener.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/spigotmc/spigot-api/1.12-R0.1-SNAPSHOT/spigot-api-1.12-R0.1-20170803.111256-74.jar!/org/bukkit/inventory/Recipe.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -688,64 +680,157 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MIPlugin.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MISkillData.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="259" column="59" selection-start-line="259" selection-start-column="59" selection-end-line="259" selection-end-column="59" />
+        <state relative-caret-position="1365">
+          <caret line="92" column="39" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="39" />
+          <folding>
+            <element signature="e#19#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/models/ChanceSet.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MIListener.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MIConfig.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MIUtility.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-278">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/models/Recipe.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/models/Machine.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        <state relative-caret-position="375">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MIGUI.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
+        <state relative-caret-position="1104">
+          <caret line="84" column="58" selection-start-line="84" selection-start-column="58" selection-end-line="84" selection-end-column="58" />
           <folding>
             <element signature="e#19#640#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/spigotmc/spigot-api/1.12-R0.1-SNAPSHOT/spigot-api-1.12-R0.1-20170803.111256-74.jar!/org/bukkit/inventory/ItemStack.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="218" column="19" selection-start-line="218" selection-start-column="19" selection-end-line="218" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MIUtility.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="85" column="8" selection-start-line="85" selection-start-column="8" selection-end-line="85" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/models/Skill.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/spigotmc/spigot-api/1.12-R0.1-SNAPSHOT/spigot-api-1.12-R0.1-20170803.111256-74.jar!/org/bukkit/plugin/java/JavaPlugin.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="65" column="22" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MIPlugin.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2430">
+          <caret line="174" column="73" selection-start-line="174" selection-start-column="73" selection-end-line="174" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/models/ChanceSet.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MIConfig.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2175">
+          <caret line="155" column="17" selection-start-line="155" selection-start-column="17" selection-end-line="155" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/models/Machine.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/models/Recipe.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="70" selection-start-line="7" selection-start-column="70" selection-end-line="7" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/VaultManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MappRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3720">
+          <caret line="287" selection-start-line="287" selection-end-line="287" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1845#1846#0" expanded="true" />
+            <element signature="e#1910#1911#0" expanded="true" />
+            <element signature="e#1957#1958#0" expanded="true" />
+            <element signature="e#1994#1995#0" expanded="true" />
+            <element signature="e#7387#7388#0" expanded="true" />
+            <element signature="e#7430#7431#0" expanded="true" />
+            <element signature="e#8088#8089#0" expanded="true" />
+            <element signature="e#8133#8134#0" expanded="true" />
+            <element signature="e#8306#8307#0" expanded="true" />
+            <element signature="e#8350#8351#0" expanded="true" />
+            <element signature="e#8454#8455#0" expanded="true" />
+            <element signature="e#8498#8499#0" expanded="true" />
+            <element signature="e#8682#8683#0" expanded="true" />
+            <element signature="e#8725#8726#0" expanded="true" />
+            <element signature="e#8913#8914#0" expanded="true" />
+            <element signature="e#8957#8958#0" expanded="true" />
+            <element signature="e#9143#9144#0" expanded="true" />
+            <element signature="e#9187#9188#0" expanded="true" />
+            <element signature="e#9339#9340#0" expanded="true" />
+            <element signature="e#9381#9382#0" expanded="true" />
+            <element signature="e#9559#9560#0" expanded="true" />
+            <element signature="e#9602#9603#0" expanded="true" />
+            <element signature="e#32273#32274#0" expanded="true" />
+            <element signature="e#32313#32314#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/RayTrace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/BoundingBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/red/man10/MIMachine.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+        <state relative-caret-position="534">
+          <caret line="38" column="37" lean-forward="true" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="38" />
           <folding>
-            <element signature="e#19#223#0" expanded="true" />
+            <element signature="e#19#464#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -809,7 +894,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

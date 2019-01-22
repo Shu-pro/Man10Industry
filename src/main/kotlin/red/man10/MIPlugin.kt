@@ -54,7 +54,7 @@ class MIPlugin: JavaPlugin() {
 
         saveDefaultConfig()
 
-        config.loadAll(Bukkit.getConsoleSender())
+        config.loadAll(Bukkit.getConsoleSender(), true)
 
         for (player in Bukkit.getOnlinePlayers()) {
             skill.currentPlayerData.put(player.uniqueId, mutableMapOf())
@@ -136,7 +136,7 @@ class MIPlugin: JavaPlugin() {
                                 return true
                             }
                             "reload" -> {
-                                config.loadAll(sender)
+                                config.loadAll(sender, false)
                                 return true
                             }
                             "list" -> {
@@ -169,6 +169,11 @@ class MIPlugin: JavaPlugin() {
                             }
                             "update" -> {
                                 skill.currentPlayerData[Bukkit.getPlayer(args[1]).uniqueId]!!.clear()
+                            }
+                            "get" -> {
+                                if (machines[args[1]] != null) {
+                                    sender.inventory.addItem(machine.createMapItem(args[1]))
+                                }
                             }
                         }
                     }
@@ -255,7 +260,7 @@ class MIPlugin: JavaPlugin() {
         sender.sendMessage("§3/mi setoutput [recipeKey] §7Set an output for recipe")
         sender.sendMessage("§3/mi usemachine [machineKey] §7Use a machine")
         sender.sendMessage("§3/mi setlevel [playerId] [skillId] [level] §7Set a level of player")
-        sender.sendMessage("§3/mi update [playerId] §7Update player's skill cache by DB.")
+        sender.sendMessage("§3/mi get [machineId] §7Get a machine")
         sender.sendMessage("§bVer 0.2 : by Shupro")
         sender.sendMessage("§a***************************")
     }

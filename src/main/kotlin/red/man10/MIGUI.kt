@@ -32,7 +32,7 @@ class MIGUI: Listener {
     fun openProcessingView(p: Player, machineId: String) {
         if (pl!!.machines[machineId] != null) {
 
-            val inv = Bukkit.getServer().createInventory(null, 54, pl!!.prefix + "§0加工メニュー")
+            val inv = Bukkit.getServer().createInventory(null, 54, pl!!.prefix + "§0加工メニュー: §l" + pl!!.machines[machineId]!!.name)
 
             val blackGlass = createItem(Material.STAINED_GLASS_PANE, 15.toShort(), "", mutableListOf())
             placeItem(blackGlass, inv, mutableListOf(0, 1, 2, 3, 4, 9, 18, 27, 36, 45, 46, 47, 48, 49, 40, 13))
@@ -78,27 +78,27 @@ class MIGUI: Listener {
     fun onItemClick(e: InventoryClickEvent) {
         val inv = e.inventory
         val p = e.whoClicked
-        when (inv.title) {
-            (pl!!.prefix + "§0加工メニュー") -> {
-                val inputSlots = mutableListOf(10, 11, 12, 19, 20, 21, 28, 29, 30, 37, 38, 39)
-                val outputSlots = mutableListOf(15, 16, 24, 25, 33, 34, 42, 43)
-                val arrowSlots = mutableListOf(22, 23, 31, 32)
 
-                if (e.clickedInventory.type == InventoryType.CHEST) {
-                    when {
-                        (inputSlots.contains(e.slot)) -> { }
-                        (outputSlots.contains(e.slot)) -> {
-                            if (e.cursor.type != Material.AIR) {
-                                e.isCancelled = true
-                            }
-                        }
-                        else -> {
+        if (inv.title.take(pl!!.prefix.length + 8) == pl!!.prefix + "§0加工メニュー") { //名前付きだから例外で処理
+            val inputSlots = mutableListOf(10, 11, 12, 19, 20, 21, 28, 29, 30, 37, 38, 39)
+            val outputSlots = mutableListOf(15, 16, 24, 25, 33, 34, 42, 43)
+            val arrowSlots = mutableListOf(22, 23, 31, 32)
+
+            print("::::" + (e.getRawSlot() == e.getSlot()))
+            if (e.getRawSlot() == e.getSlot()) {
+                when {
+                    (inputSlots.contains(e.slot)) -> { }
+                    (outputSlots.contains(e.slot)) -> {
+                        if (e.cursor.type != Material.AIR) {
                             e.isCancelled = true
                         }
                     }
-                    if (! (inputSlots.contains(e.slot) || outputSlots.contains(e.slot))) {
+                    else -> {
                         e.isCancelled = true
                     }
+                }
+                if (! (inputSlots.contains(e.slot) || outputSlots.contains(e.slot))) {
+                    e.isCancelled = true
                 }
 
                 if (arrowSlots.contains(e.slot)) {
@@ -122,7 +122,9 @@ class MIGUI: Listener {
                     }
                 }
             }
+        }
 
+        when (inv.title) {
             (pl!!.prefix + "§0Set Input"), (pl!!.prefix + "§0Set Output") -> {
                 val itemSlots = mutableListOf(45, 46, 47, 48, 49, 50, 51, 52, 53)
                 if (itemSlots.contains(e.slot)) {
@@ -153,6 +155,7 @@ class MIGUI: Listener {
                         pl!!.config.setOutput(encodedItems, recipeKey)
                     }
                     p.closeInventory()
+                    p.sendMessage(pl!!.prefix + "Done.")
 
                 }
             }

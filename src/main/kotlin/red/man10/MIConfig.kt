@@ -24,7 +24,7 @@ class MIConfig {
         return this
     }
 
-    fun loadAll(cs: CommandSender) { //Load Config & Player Data
+    fun loadAll(cs: CommandSender, isFirst: Boolean) { //Load Config & Player Data
         Bukkit.getScheduler().runTaskAsynchronously(pl!!) {
             val mysql = MySQLManager(pl!!, "MI_LoadAll")
 
@@ -33,6 +33,12 @@ class MIConfig {
             loadSkills(cs)
             loadRecipes(cs)
             loadMachines(cs)
+
+            if (isFirst) {
+                MappRenderer.setup(pl!!)
+            }
+            pl!!.machine.createAllMachineMapp()
+
             cs.sendMessage(pl!!.prefix + "§bConfigurations Loaded!")
         }
     }
@@ -142,11 +148,11 @@ class MIConfig {
                 if (ymlFile.getString(recipeKey + ".outputs") != "") {
                     newOutputs = pl!!.util.itemStackArrayFromBase64(ymlFile.getString(recipeKey + ".outputs"))
                 }
-                var newChanceSets = mutableMapOf<Skill, ChanceSet>()
+                var newChanceSets = mutableMapOf<Int, ChanceSet>()
                 val stringChanceSets = getItemsUnderPath(ymlFile, recipeKey + ".chance_sets.")//ymlFile.getKeys(true).filter { it.startsWith(recipeKey + ".chancesets.") }
                 print(stringChanceSets)
                 for (stringChanceSet in stringChanceSets) {
-                    newChanceSets.put( pl!!.skills[stringChanceSet.key.toInt()], pl!!.chanceSets[stringChanceSet.value]!! )
+                    newChanceSets.put( stringChanceSet.key.toInt(), pl!!.chanceSets[stringChanceSet.value]!! )
                 }
                 val newRecipe = Recipe(
                         newInputs,
